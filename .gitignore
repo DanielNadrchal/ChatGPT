@@ -150,3 +150,8 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+.vs/ChatGPT/v17/.suo
+.vs/ChatGPT/FileContentIndex/735a0780-5956-4851-866e-5dc53f5d90ee.vsidx
+.vs/ChatGPT/FileContentIndex/5681a060-1033-4a60-a70e-e875c6b3b2b0.vsidx
+.vs/ChatGPT/FileContentIndex/5681a060-1033-4a60-a70e-e875c6b3b2b0.vsidx
+.vs/ChatGPT/v17/.suo
