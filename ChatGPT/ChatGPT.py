@@ -1,26 +1,12 @@
-
-#https://platform.openai.com/docs/libraries
-
 import os
 import openai
 import requests
 import json
 
-
-#chat_completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": "Hello world"}])
-#print(chat_completion)
-
-
-
-
-#def send_request(input_data):
-#    chat_completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": input_data}])
-#  
-#    return chat_completion
-
 def main():
+    modelTarget = "gpt-3.5-turbo"
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    print("Python API REPL")
+    print("Python API REPL for " + modelTarget)
     print("Enter 'exit' to quit")
     allMessages = []
     
@@ -36,15 +22,15 @@ def main():
         messageIsFlagged = moderationResults.results[0].flagged
 
         if messageIsFlagged:
-            print("Message flagged and not sent to api")
+            print(moderationResults)
+            print("Message flagged by the moderation endpoint and not sent to api")
             continue
         
-        #print(moderationResults)
         userMessage = {"role" : "user", "content": user_input}
         allMessages.append(userMessage)
         
-        chat_completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=allMessages)
-        print("Raw API Response:", chat_completion)
+        chat_completion = openai.ChatCompletion.create(model=modelTarget, messages=allMessages)
+        #print("Raw API Response:", chat_completion)
         
         apiMessageResponse = chat_completion.choices[0].message
         
