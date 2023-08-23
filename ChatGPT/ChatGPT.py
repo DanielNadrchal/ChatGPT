@@ -5,7 +5,7 @@ import json
 import time
 import secrets
 
-
+# TODO: Streaming
 
 def main():
     modelTarget = "gpt-4"
@@ -18,7 +18,7 @@ def main():
     filename = secrets.token_hex(6)
     filename = 'chatLogs\\' + filename + '.txt'   
 
-    try:
+    try: 
         os.makedirs('chatLogs')
     except OSError:
         print ("Creation of the chatLogs directory failed")
